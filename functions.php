@@ -3,10 +3,18 @@
 
 add_theme_support( 'automatic-feed-links' );
 // add_theme_support( 'menus' );
-register_nav_menus();
+// register_nav_menus();
 add_theme_support( 'title-tag' );
 add_theme_support( 'post-thumbnails' ); //新たに追加
 dynamic_sidebar( $index ); 
+
+function register_my_menus() {
+  register_nav_menus(
+    array(
+    )
+  );
+}
+add_action( 'init', 'register_my_menus' );
 
 function my_styles() {
   wp_enqueue_style( 'style-name', get_template_directory_uri() . '/css/style.css', array(), '5.6.1' );
