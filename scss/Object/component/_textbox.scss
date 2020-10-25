@@ -1,0 +1,51 @@
+.c-textbox{
+  &_archive{
+  margin: 0 auto;
+  margin: 30px 70px 50px 70px;
+  @include media(sp){
+    margin: 30px 40px 30px 40px;
+  }
+  h2{
+    font-weight: normal;
+    padding-bottom: 10px;
+    @include media(sp){
+      font-size: 28px;
+    }
+  }
+    p{
+      font-size: 12px;
+      @include media(sp){
+        font-size: 18px;
+        
+      }
+    }
+  }
+  &_article{
+    background-color:#FFFFFF;
+    width: 81%;
+    padding: 8px;
+    background: rgba(243, 240, 240, 0.8);
+    color: #707070;
+    @include media(sp){
+      width: 92%;
+      height: 140px;
+    }
+    h2{
+      padding-bottom: 5px;
+      font-weight: normal;
+      @include media(tab){
+        font-size: 20px;
+      }
+    }
+    p{
+      font-size: 12px;
+      padding-bottom: 15px;
+      @include media(sp){
+        font-size: 15px;
+      }
+    }
+  }
+  &_bold{
+    padding: 50px 0px 150px 0px;
+  }
+}

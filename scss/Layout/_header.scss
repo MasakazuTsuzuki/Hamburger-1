@@ -1,0 +1,80 @@
+.l-header{
+  display: flex;
+  background-color: #FFF7EF;
+  height: 160px;
+  @include media(tab){
+    display:block;
+    text-align: center;
+    font-size: 15px;
+  }
+ &_logo{
+  color: #707070;
+  padding-top: 40px;
+  margin-left: 60px;
+  @include media(tab){
+    padding: 30px 0px;
+    margin-left: 0px;
+  }
+  @include media(sp){
+    padding-top: 30px;
+  }
+  a{
+    text-decoration: none;
+    color: #707070;
+   }
+  }
+&_menu{
+   position: absolute;
+   top: 20px;
+   right: 20px;
+   font-size: 20px;
+   color: #707070;
+   display: none;
+   text-decoration: none;
+   font-weight: bold;
+    @include media(tab){
+      display: block;
+    }
+ }
+ &_serchform{
+   display: flex;
+   padding-top: 60px;
+   position: absolute;
+   top: 10px;
+   right: 22%;
+  
+   @include media(tab){
+    top: 40px;
+    left: 25%;
+    right: 20%;
+   }
+   @include media(sp){
+    left: 10%;
+    right: 10%;
+  }
+  }
+  &_search{
+    width: 200px;
+    height: 30px;
+    background-color:#fff;
+    border:1px solid #aaa;
+    border-radius: 5px;
+    margin-right: 7px;
+    @include media(tab){
+      width: 350px;   
+    }
+    @include media(sp){
+      width: 320px;  
+    }
+    &_fontawesome{
+      font-family: FontAwesome;
+      font-style: normal;
+      font-weight: normal;
+      text-decoration: inherit;
+      width:100%;
+      line-height:28px;
+      background: none;
+      border:none;
+     } 
+   }
+}

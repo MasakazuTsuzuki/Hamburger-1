@@ -1,0 +1,44 @@
+.c-button_saerch{
+  width:60px;
+  height:30px;
+  color:#707070;
+  line-height:28px;
+  background-color:#F2EDE9;
+  border:1px solid #707070;
+  border-radius: 5px;
+  @include media(tab){
+    width: 100px;  
+    font-size: 10px;
+  }
+}
+.c-button_detail{
+  width:170px;
+  height:60px;
+  color:#707070;
+  line-height:28px;
+  background-color:#F2EDE9;
+  border:1px solid #707070;
+  border-radius: 30px;
+  &_wrapper{
+    text-align: center;
+    @include media(tab){
+      text-align: center;
+    }
+  }
+}
+  .c-button_usual{
+  width:300px;
+  height:60px;
+  font-size: 12px;;
+  color:#707070;
+  line-height:28px;
+  background-color:#F2EDE9;
+  border:1px solid #707070;
+  border-radius: 12px;
+  @include media(sp){
+    width: 100%;
+   }
+}
+
+
+ 
