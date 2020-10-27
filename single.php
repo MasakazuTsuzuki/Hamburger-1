@@ -14,10 +14,6 @@
 
 <div class="l-main_wrapper">
   
-<?php if( has_post_thumbnail() ): ?>
-
-<?php endif; ?>
-
 <p><?php the_content(); ?></p> 
 
 <?php endwhile; endif; ?>

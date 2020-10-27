@@ -69,10 +69,7 @@ Template Name: Search Page
 
 
 
-<?php
-if( function_exists('pagenation') ){ // 関数が定義されていたらtrueになる
-    pagenation();
-}?>
+<?php wp_pagenavi(); ?>
 
   </main>
 </div>

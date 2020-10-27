@@ -1,20 +1,9 @@
 <?php
 
-
 add_theme_support( 'automatic-feed-links' );
-// add_theme_support( 'menus' );
-// register_nav_menus();
 add_theme_support( 'title-tag' );
-add_theme_support( 'post-thumbnails' ); //新たに追加
+add_theme_support( 'post-thumbnails' ); 
 dynamic_sidebar( $index ); 
-
-function register_my_menus() {
-  register_nav_menus(
-    array(
-    )
-  );
-}
-add_action( 'init', 'register_my_menus' );
 
 function my_styles() {
   wp_enqueue_style( 'style-name', get_template_directory_uri() . '/css/style.css', array(), '5.6.1' );
@@ -51,12 +40,11 @@ function wpbeg_widgets_init() {
 }
 add_action( 'widgets_init', 'wpbeg_widgets_init' );
 
+// メニュー
 function menu_setup() {  
   register_nav_menus( array(
-    // 'global' => 'グローバルメニュー',
-    // 'footer' => 'フッターメニュー'
-    'footer_nav' => esc_html__( 'footer navigation', 'rtbread' ),
-    'category_nav' => esc_html__( 'categoty navigation', 'rtbread' ),
+    'categorymenu' => 'カテゴリーメニュー',
+    'footermenu' => 'フッターメニュー'
   ) );
 }
 add_action( 'after_setup_theme', 'menu_setup' );
@@ -69,62 +57,10 @@ function post_has_archive( $args, $post_type ) {
       $args['has_archive'] = 'news'; // スラッグ名
   }
   return $args;
-
-}
+  }
 add_filter( 'register_post_type_args', 'post_has_archive', 10, 2 );
 
-
-// ページネーション
-// クラス名変更予定
-function pagenation($pages = '', $range = 2){
-  $showitems = ($range * 1)+10;
-  global $paged;
-  if(empty($paged)) $paged = 1;
-  if($pages == ''){
-      global $wp_query;
-      $pages = $wp_query->max_num_pages;
-      if(!$pages){
-          $pages = 1;
-      }
-  }
-  
-  if(1 != $pages){
-      // 「1/2」表示 現在のページ数 / 総ページ数
-      echo  "<div class=\"p-pagination_page\">Page". $paged."/". $pages."</div>";
-      // 「前へ」を表示
-      if($paged > 1) echo "<div class=\"p-pagination b\"><a href='".get_pagenum_link($paged -1)."'><<</a></div>";
-      
-      // ページ番号を出力
-      for ($i=1; $i <= $pages; $i++){
-          if (1 != $pages &&( !($i >= $paged+$range+1 || $i <= $paged-$range-1) || $pages <= $showitems )){
-              echo ($paged == $i)? "<li class=\"p-pagination c\">".$i."</li>": // 現在のページの数字はリンク無し
-                  "<li class=\"p-pagination\"><a href='".get_pagenum_link($i)."'>".$i."</a></li>";
-          }
-      }
-      // [...] 表示
-      // if(($paged + 4 ) < $pages){
-      //     echo "<li class=\"notNumbering\">...</li>";
-      //     echo "<li><a href='".get_pagenum_link($pages)."'>".$pages."</a></li>";
-      // }
-      echo "</ol>\n";
-      // 「次へ」を表示
-      if($paged < $pages) echo "<div class=\"p-pagination b\" ><a href='".get_pagenum_link($paged + 1)."'>>></a></div>";
-      echo "\n";
-
-      if($paged > 1) echo "<div class=\"pc d\"><a href='".get_pagenum_link($paged -1)."'><<前へ</a></div>";
-
-      if($paged < $pages) echo "<div class=\"pc h\" ><a href='".get_pagenum_link($paged + 1)."'>次へ>></a></div>";
-      echo "\n";
-     
-  }
- 
-}
-
-
-if ( ! isset( $content_width ) ) {
-  $content_width = 960;
-}
-
+if(!isset ( $content_width)) $content_width = 900;
 ?>
 
 <!-- wp_list_comments  -->

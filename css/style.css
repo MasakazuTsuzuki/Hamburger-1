@@ -520,7 +520,7 @@ body {
 @media screen and (max-width: 960px) {
   .l-main {
     width: 100%;
-    min-height: 1200px;
+    min-height: 700px;
   }
 }
 
@@ -1420,108 +1420,91 @@ body {
   }
 }
 
-.p-pagination {
-  list-style: none;
-  display: flex;
-  float: left;
-  width: 35px;
-  height: 35px;
-  margin: 5px;
-  border: solid 1px black;
-  padding: 0px 10px 10px 12px;
+.wp-pagenavi {
   text-align: center;
-  line-height: 32px;
   margin-bottom: 40px;
-  position: relative;
-  left: 25%;
+  font-size: 25px;
 }
 
-@media screen and (max-width: 960px) {
-  .p-pagination {
-    left: 12%;
-  }
-}
-
-@media screen and (max-width: 640px) {
-  .p-pagination {
-    display: none;
-  }
-}
-
-.p-pagination:hover:not(.c) {
-  background-color: #ddd;
-}
-
-.p-pagination a {
-  text-decoration: none;
+.page {
   color: #707070;
-  position: absolute;
-  width: 35px;
-  height: 35px;
-  top: 0px;
-  left: 0px;
+  border: solid 1px;
+  margin: 0px 5px;
+  text-decoration: none;
+  padding: 5px;
 }
 
-.p-pagination a:hover {
-  color: #ffffff;
-}
-
-.b {
-  border: none;
-}
-
-.c {
+.page:hover {
   background-color: #3C2B1C;
   color: #ffffff;
 }
 
-.p-pagination_page {
-  float: left;
-  padding-top: 10px;
-  position: relative;
-  left: 20%;
-}
-
-@media screen and (max-width: 960px) {
-  .p-pagination_page {
-    left: 10%;
-  }
-}
-
 @media screen and (max-width: 640px) {
-  .p-pagination_page {
+  .page {
     display: none;
   }
 }
 
-.pc {
-  display: none;
-  font-size: 30px;
-  float: left;
-  margin-bottom: 20px;
+.pages {
+  font-size: 20px;
+  margin: 0px 5px;
 }
 
 @media screen and (max-width: 640px) {
-  .pc {
-    display: block;
+  .pages {
+    display: none;
   }
 }
 
-.pc a {
-  text-decoration: none;
+.nextpostslink {
   color: #707070;
+  margin: 0px 5px;
+  text-decoration: none;
+  padding: 5px;
 }
 
-.pc a:hover {
-  color: #3C2B1C;
+.nextpostslink:hover {
+  background-color: #3C2B1C;
+  color: #ffffff;
 }
 
-.d {
-  margin-left: 11%;
-  margin-right: 41%;
+@media screen and (max-width: 640px) {
+  .nextpostslink {
+    display: none;
+  }
 }
 
-.h {
-  margin-left: 68%;
+.previouspostslink {
+  color: #707070;
+  margin: 0px 5px;
+  text-decoration: none;
+  padding: 5px;
+}
+
+.previouspostslink:hover {
+  background-color: #3C2B1C;
+  color: #ffffff;
+}
+
+@media screen and (max-width: 640px) {
+  .previouspostslink {
+    display: none;
+  }
+}
+
+.current {
+  color: #707070;
+  border: solid 1px;
+  margin: 0px 5px;
+  text-decoration: none;
+  padding: 5px;
+  background-color: #3C2B1C;
+  color: #ffffff;
+}
+
+@media screen and (max-width: 640px) {
+  .current {
+    display: none;
+  }
 }
 /*# sourceMappingURL=style.css.map */
