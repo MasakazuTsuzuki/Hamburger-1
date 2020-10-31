@@ -12,13 +12,15 @@
   padding-top: 40px;
   margin-left: 60px;
   @include media(tab){
+    padding: 30px 0px;
+    margin-left: 0px;
+  }
+  @include media(sp){
     padding-top: 30px;
-    justify-content: center;
   }
   a{
     text-decoration: none;
     color: #707070;
-    height: 20px;
    }
   }
 &_menu{
@@ -36,11 +38,12 @@
  }
  &_serchform{
    display: flex;
-   padding-top: 60px;
+   margin-top: 40px;
    position: absolute;
-   top: 10px;
+   top: 20px;
    right: 22%;
    @include media(tab){
+    margin-top: 50px;
     top: 40px;
     left: 25%;
     right: 20%;

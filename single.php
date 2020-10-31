@@ -4,7 +4,6 @@
 
 <main class="l-main">
 
-<!-- h1チーズバーガー -->
  <div class="l-main_title">
   <img class="l-main_title_image " src="<?php the_post_thumbnail('large' ); ?>
   <p><?php the_title(); ?></p>

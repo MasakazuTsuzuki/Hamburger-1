@@ -14,7 +14,7 @@
 
   <!-- ヘッダー -->
  <header class="l-header" >
- <h1 class="l-header_logo"><a href="<?php echo $home_url;?>http://hamburgerwp.local/">Hamburger</a><h1>
+ <h1 class="l-header_logo"><a href="<?php echo $home_url;?>http://hamburgerwp.local/">Hamburger</a></h1>
    <a class="l-header_menu" href="#">Menu</a>
   
   <?php get_search_form(); ?>
