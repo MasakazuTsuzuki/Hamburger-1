@@ -1,8 +1,11 @@
 <?php
 
+
 add_theme_support( 'automatic-feed-links' );
 add_theme_support( 'title-tag' );
 add_theme_support( 'post-thumbnails' ); 
+
+
 dynamic_sidebar( $index ); 
 
 function my_styles() {
@@ -11,6 +14,7 @@ function my_styles() {
 add_action( 'wp_enqueue_scripts', 'my_styles' );
 
 add_action('wp_head', 'script_fa_cdn');
+
  
 // font-awesome読み込み
 function script_fa_cdn(){
@@ -63,21 +67,33 @@ add_filter( 'register_post_type_args', 'post_has_archive', 10, 2 );
 if(!isset ( $content_width)) $content_width = 900;
 ?>
 
-<!-- wp_list_comments  -->
-<?php wp_list_comments( $args ); ?>
+<?php
+// wp_list_comments 
+wp_list_comments( $args ); 
 
-<!-- wp_link_pages  -->
-<?php wp_link_pages( $args ); ?>
+// wp_link_pages 
+wp_link_pages( $args ); 
 
-<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+// comments_template
+ Comments_template( $file, $splitate_comments); 
 
-<!-- comments_template  -->
-<?php Comments_template( $file, $splitate_comments); ?>
+// comment_form
+ comment_form(); 
 
-<!-- comment_form  -->
-<?php comment_form(); ?>
+if(is_singular())wp_enqueue_script( "comment-reply");
 
-<?php if(is_singular())wp_enqueue_script( "comment-reply");?>
+previous_posts_link();
+paginate_comments_links();
 
-<?php previous_posts_link();?>
-<?php paginate_comments_links();?>
+add_filter( 'wp_pagenavi_class_pages', 'custom_wp_pagenavi_class_pages' );
+function custom_wp_pagenavi_class_pages($class_name) {
+  return 'page-number';
+}
+add_filter( 'wp_pagenavi_class_page', 'custom_wp_pagenavi_class_page' );
+function custom_wp_pagenavi_class_page($class_name) {
+  return 'page-content';
+}
+?>
+
+
+

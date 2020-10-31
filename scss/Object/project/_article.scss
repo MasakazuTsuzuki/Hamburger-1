@@ -11,16 +11,24 @@
   }
   &_inner{
      position: relative;
+     a{
+       &:hover{
+      opacity: 0.8;
+      transition-duration: 0.3s;
+  }
+}
      @include media(sp){
       margin-bottom: 20px ; 
     }
-  }
+    
+}
   &_border{
     border: solid 1px #ffff;
     width: 40px;
     position: absolute;
     top: 90px;
     left: 20px;
+    z-index: 20;
   }
   &_img{
     width: 85%;

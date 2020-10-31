@@ -1,7 +1,6 @@
 
 <?php get_header(); ?>
 
-
 <?php
 /*
 Template Name: Search Page
@@ -14,6 +13,7 @@ Template Name: Search Page
   <img class="l-main_archive_img" src="<?php echo esc_url (get_template_directory_uri().'/image/archive_img01.png'); ?>">
   <img class="l-main_archive_img_tab" src="<?php echo esc_url (get_template_directory_uri().'/image/archive(tab)_img01.png'); ?>">
   <img class="l-main_archive_img_sp" src="<?php echo esc_url (get_template_directory_uri().'/image/archive(sp)_img01.png'); ?>">
+
   <div class="l-main_archive_text" >
   <?php
     if(have_posts() ):
@@ -51,11 +51,22 @@ Template Name: Search Page
 ?>
  <article>
   <div class="p-article_archive">
-   <img  class="p-article_archive_img" src="<?php the_post_thumbnail('large' ); ?>
+   <img  class="p-article_archive_img" src="<?php the_post_thumbnail('large');?>
+
    <div class="p-article_archive_wrapper">
+ 
     <h2><?php the_title(); ?></h2>
-    <h3>小見出しが入ります</h3>
-    <p>テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</p>
+    
+    <?php
+if(mb_strlen($post->post_content, 'UTF-8')>200){
+	$content= mb_substr($post->post_content, 0, 200, 'UTF-8');
+	echo $content.'…';
+}else{
+	echo $post->post_content;
+}
+?>
+
+    
     <div class="c-button_detail_wrapper">
       <dd><a href="<?php the_permalink(); ?>"><button class="c-button_detail">詳しく見る</button></a></dd>
   </div>

@@ -2,11 +2,10 @@
   text-align: center;
   margin-bottom: 40px;
   font-size: 25px;
-  @include media(sp){
-    // display: none;
-  }
+  // position: relative;
+  
 }
-.page{
+.page-content{
     color: #707070;
     border: solid 1px;
     margin: 0px 5px;
@@ -21,7 +20,7 @@
     }
   }
 
-.pages{
+.page-number{
   font-size: 20px;
   margin: 0px 5px;
   @include media(sp){
@@ -37,9 +36,18 @@
     background-color: #3C2B1C;
     color: #ffffff;
   }
-  @include media(sp){
+  &::before {
+    content: "次へ";
     display: none;
+    @include media(sp){
+      display: inline;
+    }
   }
+  @include media(sp){
+    float: right;
+    width:100px;
+    margin: 0px 30px 30px 0px;
+   }
 }
 
 .previouspostslink{
@@ -51,8 +59,17 @@
     background-color: #3C2B1C;
     color: #ffffff;
   }
-  @include media(sp){
+  &::after{
+    content: "前へ";
     display: none;
+    @include media(sp){
+      display: inline;
+    }
+  }
+  @include media(sp){
+  float: left;
+  width:100px;
+  margin: 0px 0px 30px 30px;
   }
 }
 

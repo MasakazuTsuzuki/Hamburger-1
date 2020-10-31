@@ -422,20 +422,15 @@ body {
 
 @media screen and (max-width: 960px) {
   .l-header_logo {
-    padding: 30px 0px;
-    margin-left: 0px;
-  }
-}
-
-@media screen and (max-width: 640px) {
-  .l-header_logo {
     padding-top: 30px;
+    justify-content: center;
   }
 }
 
 .l-header_logo a {
   text-decoration: none;
   color: #707070;
+  height: 20px;
 }
 
 .l-header_menu {
@@ -479,12 +474,7 @@ body {
 }
 
 .l-header_search {
-  width: 200px;
-  height: 30px;
-  background-color: #fff;
-  border: 1px solid #aaa;
-  border-radius: 5px;
-  margin-right: 7px;
+  margin-right: 10px;
 }
 
 @media screen and (max-width: 960px) {
@@ -506,8 +496,11 @@ body {
   text-decoration: inherit;
   width: 100%;
   line-height: 28px;
-  background: none;
+  background-color: #fff;
   border: none;
+  font-size: 22px;
+  border-radius: 5px;
+  border: 1px solid #aaa;
 }
 
 .l-main {
@@ -529,39 +522,9 @@ body {
   height: 400px;
 }
 
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 640px) {
   .l-main_title_image {
-    display: none;
-  }
-}
-
-.l-main_title_image_tab {
-  width: 100%;
-  height: 400px;
-  display: none;
-}
-
-@media screen and (max-width: 960px) {
-  .l-main_title_image_tab {
-    display: block;
-  }
-}
-
-@media screen and (max-width: 640px) {
-  .l-main_title_image_tab {
-    display: none;
-  }
-}
-
-.l-main_title_image_sp {
-  width: 100%;
-  height: 300px;
-  display: none;
-}
-
-@media screen and (max-width: 640px) {
-  .l-main_title_image_sp {
-    display: block;
+    height: 300px;
   }
 }
 
@@ -787,16 +750,18 @@ body {
   width: 60px;
   height: 30px;
   color: #707070;
-  line-height: 28px;
+  line-height: 30px;
   background-color: #F2EDE9;
   border: 1px solid #707070;
   border-radius: 5px;
+  font-size: 18px;
 }
 
 @media screen and (max-width: 960px) {
   .c-button_saerch {
     width: 100px;
-    font-size: 10px;
+    font-size: 20px;
+    line-height: 28px;
   }
 }
 
@@ -942,6 +907,11 @@ body {
   position: relative;
 }
 
+.p-article_inner a:hover {
+  opacity: 0.8;
+  transition-duration: 0.3s;
+}
+
 @media screen and (max-width: 640px) {
   .p-article_inner {
     margin-bottom: 20px;
@@ -954,6 +924,7 @@ body {
   position: absolute;
   top: 90px;
   left: 20px;
+  z-index: 20;
 }
 
 .p-article_img {
@@ -1426,7 +1397,7 @@ body {
   font-size: 25px;
 }
 
-.page {
+.page-content {
   color: #707070;
   border: solid 1px;
   margin: 0px 5px;
@@ -1434,24 +1405,24 @@ body {
   padding: 5px;
 }
 
-.page:hover {
+.page-content:hover {
   background-color: #3C2B1C;
   color: #ffffff;
 }
 
 @media screen and (max-width: 640px) {
-  .page {
+  .page-content {
     display: none;
   }
 }
 
-.pages {
+.page-number {
   font-size: 20px;
   margin: 0px 5px;
 }
 
 @media screen and (max-width: 640px) {
-  .pages {
+  .page-number {
     display: none;
   }
 }
@@ -1468,9 +1439,22 @@ body {
   color: #ffffff;
 }
 
+.nextpostslink::before {
+  content: "次へ";
+  display: none;
+}
+
+@media screen and (max-width: 640px) {
+  .nextpostslink::before {
+    display: inline;
+  }
+}
+
 @media screen and (max-width: 640px) {
   .nextpostslink {
-    display: none;
+    float: right;
+    width: 100px;
+    margin: 0px 30px 30px 0px;
   }
 }
 
@@ -1486,9 +1470,22 @@ body {
   color: #ffffff;
 }
 
+.previouspostslink::after {
+  content: "前へ";
+  display: none;
+}
+
+@media screen and (max-width: 640px) {
+  .previouspostslink::after {
+    display: inline;
+  }
+}
+
 @media screen and (max-width: 640px) {
   .previouspostslink {
-    display: none;
+    float: left;
+    width: 100px;
+    margin: 0px 0px 30px 30px;
   }
 }
 

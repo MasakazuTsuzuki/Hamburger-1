@@ -5,13 +5,9 @@
 
 <main class="l-main">
 
-
-  <!-- ショップについて -->
- <div class="l-main_title">
-  <img class="l-main_title_image" src="<?php echo esc_url (get_template_directory_uri().'/image/page_img01.png'); ?>">
-  <img class="l-main_title_image_tab" src="<?php echo esc_url (get_template_directory_uri().'/image/page(tab)_img01.png'); ?>">
-  <img class="l-main_title_image_sp" src="<?php echo esc_url (get_template_directory_uri().'/image/page(sp)_img01.png'); ?>">
-  <p class="l-main_title_text"><?php the_title(); ?></p>
+<div class="l-main_title">
+  <img class="l-main_title_image " src="<?php the_post_thumbnail('large' ); ?>
+  <p><?php the_title(); ?></p>
 </div>
 
 <div class="l-main_wrapper">

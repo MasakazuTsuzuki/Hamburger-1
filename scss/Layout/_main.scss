@@ -11,29 +11,10 @@
     &_image{
     width: 100%;
     height:400px;
-    @include media(tab){
-      display: none;
-    }
-    &_tab{
-      width: 100%;
-      height:400px;
-      display: none;
-      @include media(tab){
-        display: block;
-      }
-      @include media(sp){
-        display: none;
-      }
-    }
-    &_sp{
-      width: 100%;
+    @include media(sp){
       height:300px;
-      display: none;
-      @include media(sp){
-        display: block;
-      }
-     }
     }
+  }
     P{
       position: absolute;
       top: 300px;
