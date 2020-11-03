@@ -8,6 +8,9 @@ add_theme_support( 'post-thumbnails' );
 
 dynamic_sidebar( $index ); 
 
+
+
+
 function my_styles() {
   wp_enqueue_style( 'style-name', get_template_directory_uri() . '/css/style.css', array(), '5.6.1' );
 }
@@ -67,6 +70,8 @@ add_filter( 'register_post_type_args', 'post_has_archive', 10, 2 );
 if(!isset ( $content_width)) $content_width = 900;
 ?>
 
+
+
 <?php
 // wp_list_comments 
 wp_list_comments( $args ); 
@@ -93,7 +98,12 @@ add_filter( 'wp_pagenavi_class_page', 'custom_wp_pagenavi_class_page' );
 function custom_wp_pagenavi_class_page($class_name) {
   return 'page-content';
 }
+
 ?>
+
+
+
+
 
 
 

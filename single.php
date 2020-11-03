@@ -19,7 +19,7 @@
 
 </main>
 </div>
-
+<div <?php post_class(); ?>>
 <?php get_sidebar(); ?>
 
 <?php get_footer(); ?>
