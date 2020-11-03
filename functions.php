@@ -8,9 +8,6 @@ add_theme_support( 'post-thumbnails' );
 
 dynamic_sidebar( $index ); 
 
-
-
-
 function my_styles() {
   wp_enqueue_style( 'style-name', get_template_directory_uri() . '/css/style.css', array(), '5.6.1' );
 }
